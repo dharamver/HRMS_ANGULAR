@@ -4,6 +4,9 @@ export class Employee {
     lastName:string;
 phone_no:string;
 email:string;
+profile:string;
+work:string;
+department:string;
 roles:Array<any>;
 salary:any;
 address:Address;

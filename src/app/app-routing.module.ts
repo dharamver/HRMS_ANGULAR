@@ -7,7 +7,7 @@ import { ProjectComponent } from './project/project.component';
 import { SalaryComponent } from './salary/salary.component';
 import { EmployeeDetailsPageComponent } from './employee-details-page/employee-details-page.component';
 const routes: Routes = [
-  
+  {path:"",redirectTo:'login',pathMatch:'full'},
   {path:'employee',component:EmployeeDetailsComponent},
   {path:'login',component:LoginComponent },
   {path:'leave',component:LeaveComponent},

@@ -16,6 +16,8 @@ export class LeaveComponent implements OnInit {
   leaves:Leave;
   employee:Array<Employee>=[]
   list:Array<Leave>=[];
+  file:File;
+
   constructor(private leaveService:LeaveServiceService,private formBuilder:FormBuilder,private employeeService:EmployeeServiceService) { 
     // this.formValue=this.formBuilder.group({
     //   employee_Name:['',Validators.required],
@@ -84,9 +86,10 @@ addLeave(data:any){
   
   this.leaveService.saveLeave(data).subscribe(data=>{
     // data=this.leaves;
+  })
+  this.uploadImage();
     alert("Save Sucussfully..");
     this.leaveModal.hide()
-  })
 }
 getbyId(id:number){
 this.leaveService.getLeaveById(id).subscribe(data=>{
@@ -104,6 +107,16 @@ deleteLeave(id:number){
   if(confirm("Do you want to delete"))
   this.leaveService.deleteLeave(id).subscribe(data=>{
    })
+}
+uploadfile(event){
+this.file=event.target.files[0];
+}
+
+uploadImage(){
+
+  this.leaveService.uploadFile(this.file).subscribe(data=>{
+
+  })
 }
 
 }

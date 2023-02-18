@@ -24,6 +24,7 @@ export class EmployeeDetailsComponent implements OnInit, DoCheck {
   employeeList: Employee[];
   list: Array<Employee> = [];
   file:File=null;
+  message:string;
   // employeeValue:Employee={
   //   id:0,
   //   salary:0,
@@ -42,6 +43,9 @@ export class EmployeeDetailsComponent implements OnInit, DoCheck {
         lastName: new FormControl(''),
         phone_no: new FormControl(''),
         email: new FormControl(''),
+        profile:new FormControl(''),
+        work:new FormControl(''),
+        department:new FormControl(''),
         address: 
           new FormGroup({
             hno: new FormControl(''),
@@ -130,11 +134,13 @@ export class EmployeeDetailsComponent implements OnInit, DoCheck {
 
   saveEmp(data: any) {
     this.saveModal.show();
-    this.employeeService.createEmployee(data).subscribe(data => {
+    this.employeeService.createEmployee(data).subscribe(da => {
 
       alert("Save Sucussfully..");
+      console.log(da);
+      
       this.saveModal.hide();
-      window.location.reload();
+      // window.location.reload();
     })
   }
   getEmployee() {
@@ -183,8 +189,8 @@ export class EmployeeDetailsComponent implements OnInit, DoCheck {
     this.file = event.target.files[0];
 }
   uploadFile(){
-console.log(this.file)
-this.employeeService.fileUplaod(this.file).subscribe(data=>{
+
+  this.employeeService.fileUplaod(this.file).subscribe(data=>{
 
 })
 

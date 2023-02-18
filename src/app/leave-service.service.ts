@@ -34,8 +34,12 @@ export class LeaveServiceService {
 //   return this.httpClient.post<any>(`${this.baseUrl}/addleave/${empId}`,leave)
 //  }
 
-uploadFile(file:any):Observable<any>{
-  return this.httpClient.post<any>(`${this.baseUrl}/upload`,file);
+uploadFile(file):Observable<any>{
+  
+  let formData=new FormData();
+  formData.append("image",file,file.filename);
+  return this.httpClient.post<any>(`${this.baseUrl}/uploadFile`,formData);
 }
+
 
 }

@@ -9,8 +9,9 @@
         <th scope="col">LastName</th>
         <th scope="col">Email</th>
         <th scope="col">phone_no</th>
-        <th scope="col">Address_id</th>
-        <th scope="col">Quelification_id</th>
+        <th scope="col">Department</th>
+        <th scope="col">Working On</th>
+        <th scope="col">Profile</th>
         <!-- <th scope="col">Salary</th> -->
         <th scope="col">Action</th>
       </tr>
@@ -22,8 +23,11 @@
         <td>{{emp.lastName}}</td>
         <td>{{emp.email}}</td>
         <td>{{emp.phone_no}}</td>
-        <td><a href="">{{emp.address.id}}</a></td>
-        <td><a href="">{{emp.quelification.id}}</a></td>
+        <td>{{emp.department}}</td>
+        <td>{{emp.work}}</td>
+        <td>{{emp.profile}}</td>
+        <!-- <td><a href="">{{emp.address.id}}</a></td>
+        <td><a href="">{{emp.quelification.id}}</a></td> -->
 
         <!-- <td>{{emp.leave.id}}</td> -->
         <!-- <td>{{emp.salary.salary}}</td> -->
@@ -57,8 +61,8 @@
                   <input type="text" formControlName="firstName" class="form-control mt-3" id="cutomer name" placeholder="Employee Name">
                 </div>
                 <div class="form-group col-md-6">
-                    <label for="Email Id" class="mt-3">lastName </label>
-                    <input type="Email" id="Email Id" formControlName="lastName" class="form-control mt-3" placeholder="Email Id">
+                    <label for="Email Id" class="mt-3">LastName </label>
+                    <input type="Email" id="Email Id" formControlName="lastName" class="form-control mt-3" placeholder="LastName">
                 </div>
                 
                 <div class="form-group col-md-6">
@@ -67,14 +71,24 @@
                 </div>
                 
                 <div class="form-group col-md-6">
-                    <label for="Phone No." class="mt-3">Email</label>
-                    <input type="text" id="Phone No." formControlName="email" class="form-control mt-3" placeholder="Deparment">
+                    <label for="Email" class="mt-3">Email</label>
+                    <input type="text" id="Email" formControlName="email" class="form-control mt-3" placeholder="Email_Id">
                 </div>
 
+                <div class="form-group col-md-6">
+                  <label for="department" class="mt-3">DepartMent</label>
+                  <input type="text" id="department" formControlName="department" class="form-control mt-3" placeholder="DepartMent">
+              </div>
+
                  <div class="form-group col-md-6">
-                    <label for="Phone No." class="mt-3">Profile</label>
-                    <input type="text"  formControlName="profile" class="form-control mt-3" placeholder="Profile">
+                    <label for="work" class="mt-3">Working On.</label>
+                    <input type="text" id="work" formControlName="work" class="form-control mt-3" placeholder="working On">
                 </div>
+
+                <div class="form-group col-md-6">
+                  <label for="profile" class="mt-3">Profile</label>
+                  <input type="text" id="profile" formControlName="profile" class="form-control mt-3" placeholder="Profile">
+              </div>
                 <div class="row" formArrayName="address" >
                 <h4 class="mt-4">Employee Address:</h4>
 

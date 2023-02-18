@@ -19,7 +19,7 @@ export class EmployeeServiceService {
     return this.httpClient.get<any>(`${this.baseUrl}/getEmployee?page=${page}&size=${size}`);
   }
   createEmployee(employee:any):Observable<any>{
-    return this.httpClient.post(`${this.baseUrl}/addEmployee`,employee);
+    return this.httpClient.post<any>(`${this.baseUrl}/addEmployee`,employee);
   }
   employeeGetbyId(id:number):Observable<Employee>{
     return this.httpClient.get<Employee>(`${this.baseUrl}/getById/${id}`);
